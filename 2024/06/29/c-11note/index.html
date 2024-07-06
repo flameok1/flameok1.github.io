@@ -28,7 +28,7 @@
 <meta property="og:description" content="下面都是C++11新功能或調整~    這邊左右值重點XDDD左值為運算式結束後還會持續存在的非暫時物件右值則為運算式結束後就不再存在之暫時物件用在一些傳參數時避免做出call by value動作，導致複製出新物件 右值參照  T &amp;&amp;用於增加對暫存物件使用主動宣告成右ref或傳入參數右ref，也不會被判定成右ref，需使用std::move轉換 下面使用重載測試呼叫結果~~~">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-06-29T10:02:18.000Z">
-<meta property="article:modified_time" content="2024-06-29T12:50:19.136Z">
+<meta property="article:modified_time" content="2024-06-30T02:43:13.876Z">
 <meta property="article:author" content="FLAMEc">
 <meta property="article:tag" content="C++,C#">
 <meta name="twitter:card" content="summary">
@@ -174,10 +174,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2024-06-29 18:02:18 / 修改時間：20:50:19" itemprop="dateCreated datePublished" datetime="2024-06-29T18:02:18+08:00">2024-06-29</time>
+              <time title="創建時間：2024-06-29 18:02:18" itemprop="dateCreated datePublished" datetime="2024-06-29T18:02:18+08:00">2024-06-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2024-06-30 10:43:13" itemprop="dateModified" datetime="2024-06-30T10:43:13+08:00">2024-06-30</time>
+              </span>
 
           
 
@@ -293,6 +299,7 @@
 <li><p>std::function 就是 C#System.Action</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">std</span>::function&lt;<span class="type">int</span>(<span class="type">int</span>, <span class="type">int</span>)&gt; func = add;</span><br></pre></td></tr></table></figure></li>
 </ol>
+<p>參考文件:<br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-tw/C%2B%2B11/">wiki c++11</a></p>
 
     </div>
 
@@ -311,7 +318,10 @@
     <a href="/2024/06/28/newcomputer/" rel="prev" title="組新電腦之神奇CPU!!">
       <i class="fa fa-chevron-left"></i> 組新電腦之神奇CPU!!
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2024/06/30/ProcessThread/" rel="next" title="進程線程">
+      進程線程 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -384,7 +394,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>

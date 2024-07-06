@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FLAMEc Vue Demo</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+
+    <body>
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          
+            <!-- If we need navigation buttons
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
+          
+            <!-- If we need scrollbar
+            <div class="swiper-scrollbar"></div> -->
+        </div>
+
+        <div>
+            <button>Dark</button>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@3.4.31/dist/vue.global.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="initvue.js"></script>
+        <script src="initswiper.js"></script>
+        <!--<script src="btntest.js"></script>-->
+        <script type="module">
+            //import x 適用在default export上，其他都要加上{}
+            import {addbtnclick} from "./btntest.js";
+            addbtnclick();
+        </script>
+    </body>
+</html>
