@@ -20,33 +20,31 @@
     var CONFIG = {"hostname":"flameok1.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="下面都是C++11新功能或調整~    這邊左右值重點XDDD左值為運算式結束後還會持續存在的非暫時物件右值則為運算式結束後就不再存在之暫時物件用在一些傳參數時避免做出call by value動作，導致複製出新物件 右值參照  T &amp;&amp;用於增加對暫存物件使用主動宣告成右ref或傳入參數右ref，也不會被判定成右ref，需使用std::move轉換 下面使用重載測試呼叫結果~~~">
-<meta property="og:type" content="article">
-<meta property="og:title" content="c++ 11 快速複習筆記">
-<meta property="og:url" content="https://flameok1.github.io/2024/06/29/c-11note/index.html">
+  <meta name="description" content="一覽無遺">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FLAMEc隨手記">
+<meta property="og:url" content="https://flameok1.github.io/page/2/index.html">
 <meta property="og:site_name" content="FLAMEc隨手記">
-<meta property="og:description" content="下面都是C++11新功能或調整~    這邊左右值重點XDDD左值為運算式結束後還會持續存在的非暫時物件右值則為運算式結束後就不再存在之暫時物件用在一些傳參數時避免做出call by value動作，導致複製出新物件 右值參照  T &amp;&amp;用於增加對暫存物件使用主動宣告成右ref或傳入參數右ref，也不會被判定成右ref，需使用std::move轉換 下面使用重載測試呼叫結果~~~">
+<meta property="og:description" content="一覽無遺">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2024-06-29T10:02:18.000Z">
-<meta property="article:modified_time" content="2024-06-30T02:43:13.876Z">
 <meta property="article:author" content="FLAMEc">
 <meta property="article:tag" content="C++,C#">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://flameok1.github.io/2024/06/29/c-11note/">
+<link rel="canonical" href="https://flameok1.github.io/page/2/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : false,
-    isPost : true,
+    isHome : true,
+    isPost : false,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>c++ 11 快速複習筆記 | FLAMEc隨手記</title>
+  <title>FLAMEc隨手記</title>
   
 
 
@@ -145,10 +143,147 @@
         <div class="content-wrap">
           
 
-          <div class="content post posts-expand">
+          <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2024/07/07/vuetest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLAMEc">
+      <meta itemprop="description" content="一覽無遺">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FLAMEc隨手記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/07/07/vuetest/" class="post-title-link" itemprop="url">vuetest</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2024-07-07 00:39:29 / 修改時間：00:49:58" itemprop="dateCreated datePublished" datetime="2024-07-07T00:39:29+08:00">2024-07-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
 
     
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>今天研究好久Vuejs…</p>
+<p>目前發現Javascript的import和export很重要吧!!!</p>
+<p>因為可以管理好資料!!</p>
+<p>Vue部分：</p>
+<p>使用方法大概兩種：</p>
+<ol>
+<li>使用Cdn上面的js檔案</li>
+<li>完整安裝整個開發環境(npm create vue@latest)</li>
+</ol>
+<p>因為這邊使用了hexo就沒再裝環境了，所以使用1.</p>
+<p>目標想要做SliderImage之類，剛好發現一個Vue外掛吧!!</p>
+<p>Swiper: 可以很方便做一些Slider功能</p>
+<p>使用方法大概兩種：</p>
+<ol>
+<li>使用Cdn</li>
+<li>完整安裝(npm install swiper)，但是估計要裝在Vue環境下…</li>
+</ol>
+<p>目前只弄了一個Demo：</p>
+<p> <a href="demo/index.html">FLAMEc Demo</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2024/06/30/ProcessThread/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLAMEc">
+      <meta itemprop="description" content="一覽無遺">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FLAMEc隨手記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/06/30/ProcessThread/" class="post-title-link" itemprop="url">進程線程</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2024-06-30 08:39:22 / 修改時間：08:45:10" itemprop="dateCreated datePublished" datetime="2024-06-30T08:39:22+08:00">2024-06-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="進程-Process"><a href="#進程-Process" class="headerlink" title="進程 Process"></a>進程 Process</h2><p>就是程式執行後的狀態，在工作管理員看到的狀態~</p>
+<h2 id="線程-Thread"><a href="#線程-Thread" class="headerlink" title="線程 Thread"></a>線程 Thread</h2><p>一個Process至少會有一個Main Thread，實際執行程式碼的也是Main Thread.</p>
+<h2 id="多線程-MultiThread"><a href="#多線程-MultiThread" class="headerlink" title="多線程 MultiThread"></a>多線程 MultiThread</h2><p>就是一個Process除了有Main Thread以外，還會多開其他Thread去做任務.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
@@ -164,9 +299,10 @@
       <meta itemprop="name" content="FLAMEc隨手記">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          c++ 11 快速複習筆記
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/06/29/c-11note/" class="post-title-link" itemprop="url">c++ 11 快速複習筆記</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -196,7 +332,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>下面都是C++11新功能或調整~</p>
+          <p>下面都是C++11新功能或調整~</p>
 <ol>
 <li></li>
 </ol>
@@ -301,34 +437,181 @@
 </ol>
 <p>參考文件:<br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-tw/C%2B%2B11/">wiki c++11</a></p>
 
+      
     </div>
 
     
     
     
-
       <footer class="post-footer">
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2024/06/28/newcomputer/" rel="prev" title="組新電腦之神奇CPU!!">
-      <i class="fa fa-chevron-left"></i> 組新電腦之神奇CPU!!
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2024/06/30/ProcessThread/" rel="next" title="進程線程">
-      進程線程 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
+        <div class="post-eof"></div>
       </footer>
-    
   </article>
   
   
   
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2024/06/28/newcomputer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLAMEc">
+      <meta itemprop="description" content="一覽無遺">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FLAMEc隨手記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/06/28/newcomputer/" class="post-title-link" itemprop="url">組新電腦之神奇CPU!!</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2024-06-28 23:02:46 / 修改時間：23:18:26" itemprop="dateCreated datePublished" datetime="2024-06-28T23:02:46+08:00">2024-06-28</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>2024&#x2F;06&#x2F;25下班~~~~~~~~</p>
+<p>剛收到在欣亞電腦網購的電腦零件!!!</p>
+<p>因為自己想組裝所以沒有請欣亞電腦裝，</p>
+<p>因為小孩關係10點多才開始開箱裝XDDD</p>
+<p>一直忙到12點多…正常開機!!!!!!!!!</p>
+<p>然後進BIOS…我去!!  CPU為啥溫度0??????????</p>
+<p>想說風扇稍微有在轉…先灌Win11看看吧QQ</p>
+<p>灌完進去桌面…順手點了MSI Center看狀況…</p>
+<p>歐不!!  CPU溫度0…………..</p>
+<p>嚇死啊!!!不會快燒了吧???…利馬關機…</p>
+<p>隔天想說會不會是BIOS設定錯誤打電話給MSI客服!!!</p>
+<p>客服小姐很有耐心XDDD  結果搞了15分鐘還是要拿主機板去MSI檢測0.0…</p>
+<p>還好今天要出門順路過去!!!，測試結果主機板正常&#x3D;口&#x3D;</p>
+<p>(驚)不會CPU壞掉吧??回家馬上仔細看CPU有沒有損傷，結果正常!!!</p>
+<p>隔天馬上連絡欣亞帶去店面檢查!!!</p>
+<p>欣亞客人蠻多的，來來去去，店員很和善!!!</p>
+<p>測試員正在測其他電腦，順便聊了兩句!!</p>
+<h2 id="CPU壞掉會開不起來或著一直當機-還好我都不會QQ"><a href="#CPU壞掉會開不起來或著一直當機-還好我都不會QQ" class="headerlink" title="CPU壞掉會開不起來或著一直當機~~~還好我都不會QQ"></a>CPU壞掉會開不起來或著一直當機~~~還好我都不會QQ</h2><p>然後一測…CPU有問題!!!，真瑕疵品吧QQ</p>
+<p>幸好可以換新XDDD，差點嚇死啊!!</p>
+<p>CPU好貴阿QQ，經過這次事情再碰到類似狀況應該就不會這麼擔心了XDDD</p>
+<p>如果有碰到類似情況不要急，請聯絡客服然後帶去店面檢查喔!!!</p>
+<p>這邊提醒大家剛買的電腦盒子不要丟喔!!送修換新要用到~~~</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2024/06/27/start/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLAMEc">
+      <meta itemprop="description" content="一覽無遺">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FLAMEc隨手記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/06/27/start/" class="post-title-link" itemprop="url">淡淡的開始</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-06-27 23:11:45" itemprop="dateCreated datePublished" datetime="2024-06-27T23:11:45+08:00">2024-06-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2024-06-28 21:53:42" itemprop="dateModified" datetime="2024-06-28T21:53:42+08:00">2024-06-28</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>最近由於各種原因~~~</p>
+<p>剛好會需要複習以前用過的東西!!!</p>
+<p>比如PHP、Java等等，可能是某個需求用了一下的東西~~~</p>
+<p>也又學了一些新技術和本來沒在用的技術!!!</p>
+<p>因為複習總是需要花時間找資料…</p>
+<p>靈光一閃就想著把資料整理起來，</p>
+<p>剛學到的新資料也好，</p>
+<p>剛複習的舊東西也好，</p>
+<p>總之讓以後再次看的時候方便一些，</p>
+<p>雖然到時候可能是舊資料了QQ</p>
+<p>但是能快速複習再學新東西才是重點!!!</p>
+<p>所以就有了這個Blog的誕生!!!</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+  </nav>
 
 
 
@@ -380,7 +663,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%99%E9%82%8A%E5%B7%A6%E5%8F%B3%E5%80%BC%E9%87%8D%E9%BB%9EXDDD"><span class="nav-number">1.</span> <span class="nav-text">這邊左右值重點XDDD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A6%E5%80%BC%E7%82%BA%E9%81%8B%E7%AE%97%E5%BC%8F%E7%B5%90%E6%9D%9F%E5%BE%8C%E9%82%84%E6%9C%83%E6%8C%81%E7%BA%8C%E5%AD%98%E5%9C%A8%E7%9A%84%E9%9D%9E%E6%9A%AB%E6%99%82%E7%89%A9%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">左值為運算式結束後還會持續存在的非暫時物件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%B3%E5%80%BC%E5%89%87%E7%82%BA%E9%81%8B%E7%AE%97%E5%BC%8F%E7%B5%90%E6%9D%9F%E5%BE%8C%E5%B0%B1%E4%B8%8D%E5%86%8D%E5%AD%98%E5%9C%A8%E4%B9%8B%E6%9A%AB%E6%99%82%E7%89%A9%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">右值則為運算式結束後就不再存在之暫時物件</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

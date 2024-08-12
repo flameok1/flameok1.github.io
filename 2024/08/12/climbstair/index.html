@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"flameok1.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="最近正在研究android新跨平台開發套件 Flutter use android studio 先不說能跨多少平台，在建專案的時候就有兩個選擇!! 1.Jave2.kotlin 一個新的名稱!!  所以特別去google查了一下狀況~~~如下!! Kotlin 是針對Java 優化的一種語言(雖然語法稍有不同?) Kotlin 最大的特色就是 100% 和 JAVA 配合，使用者可以不用在Kot">
+  <meta name="description" content="今天又碰到爬樓梯的問題~~~ 是leetcode的題目，題目如下(直接複製的)：You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top">
 <meta property="og:type" content="article">
-<meta property="og:title" content="flutter碰到kotlin">
-<meta property="og:url" content="https://flameok1.github.io/2024/07/20/kotlin/index.html">
+<meta property="og:title" content="爬樓梯">
+<meta property="og:url" content="https://flameok1.github.io/2024/08/12/climbstair/index.html">
 <meta property="og:site_name" content="FLAMEc隨手記">
-<meta property="og:description" content="最近正在研究android新跨平台開發套件 Flutter use android studio 先不說能跨多少平台，在建專案的時候就有兩個選擇!! 1.Jave2.kotlin 一個新的名稱!!  所以特別去google查了一下狀況~~~如下!! Kotlin 是針對Java 優化的一種語言(雖然語法稍有不同?) Kotlin 最大的特色就是 100% 和 JAVA 配合，使用者可以不用在Kot">
+<meta property="og:description" content="今天又碰到爬樓梯的問題~~~ 是leetcode的題目，題目如下(直接複製的)：You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2024-07-19T16:15:07.000Z">
-<meta property="article:modified_time" content="2024-07-19T16:24:59.572Z">
+<meta property="article:published_time" content="2024-08-12T00:25:07.000Z">
+<meta property="article:modified_time" content="2024-08-12T00:52:44.829Z">
 <meta property="article:author" content="FLAMEc">
 <meta property="article:tag" content="C++,C#">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://flameok1.github.io/2024/07/20/kotlin/">
+<link rel="canonical" href="https://flameok1.github.io/2024/08/12/climbstair/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>flutter碰到kotlin | FLAMEc隨手記</title>
+  <title>爬樓梯 | FLAMEc隨手記</title>
   
 
 
@@ -152,7 +152,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2024/07/20/kotlin/">
+    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2024/08/12/climbstair/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -165,7 +165,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          flutter碰到kotlin
+          爬樓梯
         </h1>
 
         <div class="post-meta">
@@ -176,7 +176,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2024-07-20 00:15:07 / 修改時間：00:24:59" itemprop="dateCreated datePublished" datetime="2024-07-20T00:15:07+08:00">2024-07-20</time>
+              <time title="創建時間：2024-08-12 08:25:07 / 修改時間：08:52:44" itemprop="dateCreated datePublished" datetime="2024-08-12T08:25:07+08:00">2024-08-12</time>
             </span>
 
           
@@ -190,18 +190,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>最近正在研究android新跨平台開發套件 Flutter use android studio</p>
-<p>先不說能跨多少平台，在建專案的時候就有兩個選擇!!</p>
-<p>1.Jave<br>2.kotlin</p>
-<p>一個新的名稱!!  所以特別去google查了一下狀況~~~如下!!</p>
-<p>Kotlin 是針對Java 優化的一種語言(雖然語法稍有不同?)</p>
-<h2 id="Kotlin-最大的特色就是-100-和-JAVA-配合，使用者可以不用在Kotlin與Java-之間猶豫二選一，需要的時候再使用Kotlin-即可。"><a href="#Kotlin-最大的特色就是-100-和-JAVA-配合，使用者可以不用在Kotlin與Java-之間猶豫二選一，需要的時候再使用Kotlin-即可。" class="headerlink" title="Kotlin 最大的特色就是 100% 和 JAVA 配合，使用者可以不用在Kotlin與Java 之間猶豫二選一，需要的時候再使用Kotlin 即可。"></a>Kotlin 最大的特色就是 100% 和 JAVA 配合，使用者可以不用在Kotlin與Java 之間猶豫二選一，需要的時候再使用Kotlin 即可。</h2><p>順便提一下語言差別~~~</p>
-<h1 id="靜態語言"><a href="#靜態語言" class="headerlink" title="靜態語言"></a>靜態語言</h1><p>需要在宣告型別時定義變數的型別</p>
-<p>String hello &#x3D; ‘hello’;</p>
-<h1 id="動態語言"><a href="#動態語言" class="headerlink" title="動態語言"></a>動態語言</h1><p>不用事先宣告型別的語言</p>
-<p>var a &#x3D; 0;</p>
-<h1 id="直譯式語言"><a href="#直譯式語言" class="headerlink" title="直譯式語言"></a>直譯式語言</h1><p>程式碼不用編譯成執行檔直接用直譯器執行</p>
-<h1 id="編譯式語言"><a href="#編譯式語言" class="headerlink" title="編譯式語言"></a>編譯式語言</h1><p>程式碼會先編譯成下兩種之一<br>1.執行檔 &#x3D;&gt; 直接執行<br>2.中間檔 &#x3D;&gt; 平台環境執行器轉譯執行</p>
+        <p>今天又碰到爬樓梯的問題~~~</p>
+<h3 id="是leetcode的題目，題目如下-直接複製的-："><a href="#是leetcode的題目，題目如下-直接複製的-：" class="headerlink" title="是leetcode的題目，題目如下(直接複製的)："></a>是leetcode的題目，題目如下(直接複製的)：</h3><p>You are climbing a staircase. It takes n steps to reach the top.</p>
+<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
+<p>之前也碰過但沒詳細研究為什麼這樣會對!!!</p>
+<p>這次就要把整個過程記下來避免忘記~~~</p>
+<p>網路上常看到說要爬到n-1步和n-2步加起來~~~</p>
+<p>也沒細說為什麼…後來我靈光一閃是這樣的XD</p>
+<p>因為我們只能走1步或2步~~~</p>
+<p>所以當我們到達第N樓梯的時候~~~最後一步只有兩種可能!!!</p>
+<h3 id="踏上N樓梯的最後一步只有兩種狀況-跨一步-和-跨兩步"><a href="#踏上N樓梯的最後一步只有兩種狀況-跨一步-和-跨兩步" class="headerlink" title="踏上N樓梯的最後一步只有兩種狀況 跨一步 和 跨兩步"></a>踏上N樓梯的最後一步只有兩種狀況 <font color=#FF0000>跨一步</font> 和 <font color=#FF0000>跨兩步</font></h3><p>所以我們只需要知道跨一步有幾種可能和跨兩步有幾種可能，加起來就是答案~~~</p>
+<h3 id="因為最後步伐不同所以不會有重複情況"><a href="#因為最後步伐不同所以不會有重複情況" class="headerlink" title="因為最後步伐不同所以不會有重複情況!!"></a>因為最後步伐不同所以不會有重複情況!!</h3><p>然後往回推~~~最後跨一步有幾種可能也是一樣!!</p>
+<p>最後跨一步也是由 走一步 和 走兩步 可能和計算出來~~~</p>
+<p>同理最後跨兩步也是一樣~~~</p>
+<p>用這樣解法逆推到一開始就會得到答案!!</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">climbStairs</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>( n &lt; <span class="number">3</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt; <span class="title function_">nstep</span><span class="params">(n,<span class="number">0</span>)</span>;</span><br><span class="line">    nstep[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    nstep[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        nstep[i] = nstep[i - <span class="number">1</span>] + nstep[i - <span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> nstep[n - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面這方法可以將nstep存起來，重複使用!</p>
 
     </div>
 
@@ -217,13 +222,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2024/07/07/vuetest/" rel="prev" title="vuetest">
-      <i class="fa fa-chevron-left"></i> vuetest
+    <a href="/2024/08/05/ue5googlesheetdatatable/" rel="prev" title="使用Google Sheet填充UE5 DataTable">
+      <i class="fa fa-chevron-left"></i> 使用Google Sheet填充UE5 DataTable
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2024/07/20/FindValidMatrix/" rel="next" title="算出可用矩陣用ROW SUM和COL SUM">
-      算出可用矩陣用ROW SUM和COL SUM <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -282,7 +284,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Kotlin-%E6%9C%80%E5%A4%A7%E7%9A%84%E7%89%B9%E8%89%B2%E5%B0%B1%E6%98%AF-100-%E5%92%8C-JAVA-%E9%85%8D%E5%90%88%EF%BC%8C%E4%BD%BF%E7%94%A8%E8%80%85%E5%8F%AF%E4%BB%A5%E4%B8%8D%E7%94%A8%E5%9C%A8Kotlin%E8%88%87Java-%E4%B9%8B%E9%96%93%E7%8C%B6%E8%B1%AB%E4%BA%8C%E9%81%B8%E4%B8%80%EF%BC%8C%E9%9C%80%E8%A6%81%E7%9A%84%E6%99%82%E5%80%99%E5%86%8D%E4%BD%BF%E7%94%A8Kotlin-%E5%8D%B3%E5%8F%AF%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">Kotlin 最大的特色就是 100% 和 JAVA 配合，使用者可以不用在Kotlin與Java 之間猶豫二選一，需要的時候再使用Kotlin 即可。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%9C%E6%85%8B%E8%AA%9E%E8%A8%80"><span class="nav-number"></span> <span class="nav-text">靜態語言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8B%95%E6%85%8B%E8%AA%9E%E8%A8%80"><span class="nav-number"></span> <span class="nav-text">動態語言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%B4%E8%AD%AF%E5%BC%8F%E8%AA%9E%E8%A8%80"><span class="nav-number"></span> <span class="nav-text">直譯式語言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B7%A8%E8%AD%AF%E5%BC%8F%E8%AA%9E%E8%A8%80"><span class="nav-number"></span> <span class="nav-text">編譯式語言</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%AFleetcode%E7%9A%84%E9%A1%8C%E7%9B%AE%EF%BC%8C%E9%A1%8C%E7%9B%AE%E5%A6%82%E4%B8%8B-%E7%9B%B4%E6%8E%A5%E8%A4%87%E8%A3%BD%E7%9A%84-%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">是leetcode的題目，題目如下(直接複製的)：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B8%8F%E4%B8%8AN%E6%A8%93%E6%A2%AF%E7%9A%84%E6%9C%80%E5%BE%8C%E4%B8%80%E6%AD%A5%E5%8F%AA%E6%9C%89%E5%85%A9%E7%A8%AE%E7%8B%80%E6%B3%81-%E8%B7%A8%E4%B8%80%E6%AD%A5-%E5%92%8C-%E8%B7%A8%E5%85%A9%E6%AD%A5"><span class="nav-number">2.</span> <span class="nav-text">踏上N樓梯的最後一步只有兩種狀況 跨一步 和 跨兩步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%A0%E7%82%BA%E6%9C%80%E5%BE%8C%E6%AD%A5%E4%BC%90%E4%B8%8D%E5%90%8C%E6%89%80%E4%BB%A5%E4%B8%8D%E6%9C%83%E6%9C%89%E9%87%8D%E8%A4%87%E6%83%85%E6%B3%81"><span class="nav-number">3.</span> <span class="nav-text">因為最後步伐不同所以不會有重複情況!!</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
