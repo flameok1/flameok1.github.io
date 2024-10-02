@@ -149,6 +149,82 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2024/10/02/rezorlearn01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLAMEc">
+      <meta itemprop="description" content="一覽無遺">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FLAMEc隨手記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/10/02/rezorlearn01/" class="post-title-link" itemprop="url">Asp .Net Core Razor</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2024-10-02 21:42:02 / 修改時間：21:52:14" itemprop="dateCreated datePublished" datetime="2024-10-02T21:42:02+08:00">2024-10-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>最近因為工作上需要研究了Asp .Net Core Razor~~~</p>
+<p>個人之前剛用過php舊寫法，對於網頁呈現方式看起來還可以~~~</p>
+<p>但是偏偏找不到起始頁面到底是從哪裡設定的0.0…</p>
+<p>網路上有許多說法…</p>
+<p>有在專案屬性中設定，有右鍵選單指定?</p>
+<p>可能是版本關係都不能用~!!</p>
+<p>我目前是使用VS2022，舊專案應該也是用相去不遠版本產生的!!!</p>
+<p>經過各種查詢和開專案測試…確認如下!!!</p>
+<ol>
+<li><p>預設會執行index頁面，副檔名很多，可能是cshtml或.razor…</p>
+</li>
+<li><p>實際指定情況是@page，如沒有加字串應該就是用檔名，如home.cshtm的狀況下@page大概就等於@page “&#x2F;home”</p>
+</li>
+<li><p>設定預設執行哪邊請用@page “&#x2F;“，如果有index頁面請對index設定其他@page “&#x2F;其他值”，避免有兩個預設頁面出錯</p>
+</li>
+</ol>
+<p>以上大概是今天研究成果，感覺上進度大大增加XDD</p>
+<p>知道從哪邊開始就是不一樣~~~~~~~~~~~</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2024/08/12/climbstair/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -435,76 +511,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2024/07/20/kotlin/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="FLAMEc">
-      <meta itemprop="description" content="一覽無遺">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FLAMEc隨手記">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/07/20/kotlin/" class="post-title-link" itemprop="url">flutter碰到kotlin</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2024-07-20 00:15:07 / 修改時間：00:24:59" itemprop="dateCreated datePublished" datetime="2024-07-20T00:15:07+08:00">2024-07-20</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>最近正在研究android新跨平台開發套件 Flutter use android studio</p>
-<p>先不說能跨多少平台，在建專案的時候就有兩個選擇!!</p>
-<p>1.Jave<br>2.kotlin</p>
-<p>一個新的名稱!!  所以特別去google查了一下狀況~~~如下!!</p>
-<p>Kotlin 是針對Java 優化的一種語言(雖然語法稍有不同?)</p>
-<h2 id="Kotlin-最大的特色就是-100-和-JAVA-配合，使用者可以不用在Kotlin與Java-之間猶豫二選一，需要的時候再使用Kotlin-即可。"><a href="#Kotlin-最大的特色就是-100-和-JAVA-配合，使用者可以不用在Kotlin與Java-之間猶豫二選一，需要的時候再使用Kotlin-即可。" class="headerlink" title="Kotlin 最大的特色就是 100% 和 JAVA 配合，使用者可以不用在Kotlin與Java 之間猶豫二選一，需要的時候再使用Kotlin 即可。"></a>Kotlin 最大的特色就是 100% 和 JAVA 配合，使用者可以不用在Kotlin與Java 之間猶豫二選一，需要的時候再使用Kotlin 即可。</h2><p>順便提一下語言差別~~~</p>
-<h1 id="靜態語言"><a href="#靜態語言" class="headerlink" title="靜態語言"></a>靜態語言</h1><p>需要在宣告型別時定義變數的型別</p>
-<p>String hello &#x3D; ‘hello’;</p>
-<h1 id="動態語言"><a href="#動態語言" class="headerlink" title="動態語言"></a>動態語言</h1><p>不用事先宣告型別的語言</p>
-<p>var a &#x3D; 0;</p>
-<h1 id="直譯式語言"><a href="#直譯式語言" class="headerlink" title="直譯式語言"></a>直譯式語言</h1><p>程式碼不用編譯成執行檔直接用直譯器執行</p>
-<h1 id="編譯式語言"><a href="#編譯式語言" class="headerlink" title="編譯式語言"></a>編譯式語言</h1><p>程式碼會先編譯成下兩種之一<br>1.執行檔 &#x3D;&gt; 直接執行<br>2.中間檔 &#x3D;&gt; 平台環境執行器轉譯執行</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -574,7 +580,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
