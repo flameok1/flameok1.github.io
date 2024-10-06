@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"flameok1.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="2024&#x2F;06&#x2F;25下班~~~~~~~~ 剛收到在欣亞電腦網購的電腦零件!!! 因為自己想組裝所以沒有請欣亞電腦裝， 因為小孩關係10點多才開始開箱裝XDDD 一直忙到12點多…正常開機!!!!!!!!! 然後進BIOS…我去!!  CPU為啥溫度0?????????? 想說風扇稍微有在轉…先灌Win11看看吧QQ 灌完進去桌面…順手點了MSI Center看狀況… 歐不!!">
+  <meta name="description" content="最近用xampp做了一個簡單的php網頁， 剛好碰到將網頁移動到iis系統上狀況， 於是碰到mysql和mssql使用上差異~ 連接到mysql如下~ 12345678910$server_name &#x3D; &#x27;localhost&#x27;;$username &#x3D; &#x27;flamec&#x27;;$password &#x3D; &#x27;123456789&#x27;;$db_name &#x3D;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="組新電腦之神奇CPU!!">
-<meta property="og:url" content="https://flameok1.github.io/2024/06/28/newcomputer/index.html">
+<meta property="og:title" content="php中mysql和mssql">
+<meta property="og:url" content="https://flameok1.github.io/2024/10/06/phpmysqlmssql/index.html">
 <meta property="og:site_name" content="FLAMEc隨手記">
-<meta property="og:description" content="2024&#x2F;06&#x2F;25下班~~~~~~~~ 剛收到在欣亞電腦網購的電腦零件!!! 因為自己想組裝所以沒有請欣亞電腦裝， 因為小孩關係10點多才開始開箱裝XDDD 一直忙到12點多…正常開機!!!!!!!!! 然後進BIOS…我去!!  CPU為啥溫度0?????????? 想說風扇稍微有在轉…先灌Win11看看吧QQ 灌完進去桌面…順手點了MSI Center看狀況… 歐不!!">
+<meta property="og:description" content="最近用xampp做了一個簡單的php網頁， 剛好碰到將網頁移動到iis系統上狀況， 於是碰到mysql和mssql使用上差異~ 連接到mysql如下~ 12345678910$server_name &#x3D; &#x27;localhost&#x27;;$username &#x3D; &#x27;flamec&#x27;;$password &#x3D; &#x27;123456789&#x27;;$db_name &#x3D;">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2024-06-28T15:02:46.000Z">
-<meta property="article:modified_time" content="2024-06-28T15:18:26.538Z">
+<meta property="article:published_time" content="2024-10-06T03:19:16.000Z">
+<meta property="article:modified_time" content="2024-10-06T03:36:23.257Z">
 <meta property="article:author" content="FLAMEc">
 <meta property="article:tag" content="C++,C#">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://flameok1.github.io/2024/06/28/newcomputer/">
+<link rel="canonical" href="https://flameok1.github.io/2024/10/06/phpmysqlmssql/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>組新電腦之神奇CPU!! | FLAMEc隨手記</title>
+  <title>php中mysql和mssql | FLAMEc隨手記</title>
   
 
 
@@ -152,7 +152,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2024/06/28/newcomputer/">
+    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2024/10/06/phpmysqlmssql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -165,7 +165,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          組新電腦之神奇CPU!!
+          php中mysql和mssql
         </h1>
 
         <div class="post-meta">
@@ -176,7 +176,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2024-06-28 23:02:46 / 修改時間：23:18:26" itemprop="dateCreated datePublished" datetime="2024-06-28T23:02:46+08:00">2024-06-28</time>
+              <time title="創建時間：2024-10-06 11:19:16 / 修改時間：11:36:23" itemprop="dateCreated datePublished" datetime="2024-10-06T11:19:16+08:00">2024-10-06</time>
             </span>
 
           
@@ -190,28 +190,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>2024&#x2F;06&#x2F;25下班~~~~~~~~</p>
-<p>剛收到在欣亞電腦網購的電腦零件!!!</p>
-<p>因為自己想組裝所以沒有請欣亞電腦裝，</p>
-<p>因為小孩關係10點多才開始開箱裝XDDD</p>
-<p>一直忙到12點多…正常開機!!!!!!!!!</p>
-<p>然後進BIOS…我去!!  CPU為啥溫度0??????????</p>
-<p>想說風扇稍微有在轉…先灌Win11看看吧QQ</p>
-<p>灌完進去桌面…順手點了MSI Center看狀況…</p>
-<p>歐不!!  CPU溫度0…………..</p>
-<p>嚇死啊!!!不會快燒了吧???…利馬關機…</p>
-<p>隔天想說會不會是BIOS設定錯誤打電話給MSI客服!!!</p>
-<p>客服小姐很有耐心XDDD  結果搞了15分鐘還是要拿主機板去MSI檢測0.0…</p>
-<p>還好今天要出門順路過去!!!，測試結果主機板正常&#x3D;口&#x3D;</p>
-<p>(驚)不會CPU壞掉吧??回家馬上仔細看CPU有沒有損傷，結果正常!!!</p>
-<p>隔天馬上連絡欣亞帶去店面檢查!!!</p>
-<p>欣亞客人蠻多的，來來去去，店員很和善!!!</p>
-<p>測試員正在測其他電腦，順便聊了兩句!!</p>
-<h2 id="CPU壞掉會開不起來或著一直當機-還好我都不會QQ"><a href="#CPU壞掉會開不起來或著一直當機-還好我都不會QQ" class="headerlink" title="CPU壞掉會開不起來或著一直當機~~~還好我都不會QQ"></a>CPU壞掉會開不起來或著一直當機~~~還好我都不會QQ</h2><p>然後一測…CPU有問題!!!，真瑕疵品吧QQ</p>
-<p>幸好可以換新XDDD，差點嚇死啊!!</p>
-<p>CPU好貴阿QQ，經過這次事情再碰到類似狀況應該就不會這麼擔心了XDDD</p>
-<p>如果有碰到類似情況不要急，請聯絡客服然後帶去店面檢查喔!!!</p>
-<p>這邊提醒大家剛買的電腦盒子不要丟喔!!送修換新要用到~~~</p>
+        <p>最近用xampp做了一個簡單的php網頁，</p>
+<p>剛好碰到將網頁移動到iis系統上狀況，</p>
+<p>於是碰到mysql和mssql使用上差異~</p>
+<p>連接到mysql如下~</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$server_name</span> = <span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"><span class="variable">$username</span> = <span class="string">&#x27;flamec&#x27;</span>;</span><br><span class="line"><span class="variable">$password</span> = <span class="string">&#x27;123456789&#x27;</span>;</span><br><span class="line"><span class="variable">$db_name</span> = <span class="string">&#x27;test&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">$conn</span> = <span class="keyword">new</span> <span class="title function_ invoke__">mysqli</span>(<span class="variable">$server_name</span>, <span class="variable">$username</span>, <span class="variable">$password</span>, <span class="variable">$db_name</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$conn</span>-&gt;connect_error) &#123;</span><br><span class="line"><span class="keyword">die</span>(<span class="string">&#x27;資料庫連線錯誤：&#x27;</span> . <span class="variable">$conn</span>-&gt;connect_error);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>連接到mssql如下~</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$connectionInfo</span> = <span class="keyword">array</span>( <span class="string">&quot;Database&quot;</span>=&gt;<span class="variable">$db_name</span>, <span class="string">&quot;UID&quot;</span>=&gt;<span class="variable">$server_name</span>, <span class="string">&quot;PWD&quot;</span>=&gt;<span class="variable">$password</span> );</span><br><span class="line"><span class="variable">$conn</span> = <span class="title function_ invoke__">sqlsrv_connect</span>( <span class="variable">$server_name</span>, <span class="variable">$connectionInfo</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>( <span class="variable">$conn</span> === <span class="literal">false</span> ) &#123;</span><br><span class="line">     <span class="keyword">die</span>( <span class="title function_ invoke__">print_r</span>( <span class="title function_ invoke__">sqlsrv_errors</span>(), <span class="literal">true</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>語法都差不多，但結果尚有點差異~<br>mysql的select~~~</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sql</span> = <span class="string">&quot;SELECT * FROM testtable&quot;</span>;</span><br><span class="line"><span class="variable">$result</span> = <span class="variable">$conn</span>-&gt;<span class="title function_ invoke__">query</span>(<span class="variable">$sql</span>); <span class="comment">//1</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$result</span>-&gt;num_rows &gt; <span class="number">0</span>) &#123; <span class="comment">//2</span></span><br><span class="line">    <span class="comment">// 输出数据</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="variable">$row</span> = <span class="variable">$result</span>-&gt;<span class="title function_ invoke__">fetch_assoc</span>()) &#123; <span class="comment">//3</span></span><br><span class="line">        <span class="title function_ invoke__">print_r</span>(<span class="variable">$row</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>mssql的select~~~</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sql</span> = <span class="string">&quot;SELECT * FROM testtable&quot;</span>;</span><br><span class="line"><span class="variable">$result</span> = <span class="title function_ invoke__">sqlsrv_query</span>(<span class="variable">$conn</span>, <span class="variable">$sql</span>); <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$result</span> === <span class="literal">false</span>) &#123; <span class="comment">//2</span></span><br><span class="line">    <span class="keyword">die</span>(<span class="title function_ invoke__">print_r</span>(<span class="title function_ invoke__">sqlsrv_errors</span>(), <span class="literal">true</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="variable">$row</span> = <span class="title function_ invoke__">sqlsrv_fetch_array</span>(<span class="variable">$result</span>, SQLSRV_FETCH_ASSOC)) &#123; <span class="comment">//3</span></span><br><span class="line">    <span class="title function_ invoke__">print_r</span>(<span class="variable">$row</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最主要差異就是上面註解1~3的地方~~~</p>
+<p>其他大部分相同~~~</p>
+<p>但是有些mysql語法mssql不支援，比如limit…</p>
+<p>如果要讓兩邊方便切換可以減少使用，就能快速切換~~~</p>
 
     </div>
 
@@ -227,13 +225,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2024/06/27/start/" rel="prev" title="淡淡的開始">
-      <i class="fa fa-chevron-left"></i> 淡淡的開始
+    <a href="/2024/10/02/rezorlearn01/" rel="prev" title="Asp .Net Core Razor">
+      <i class="fa fa-chevron-left"></i> Asp .Net Core Razor
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2024/06/29/c-11note/" rel="next" title="c++ 11 快速複習筆記">
-      c++ 11 快速複習筆記 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -292,7 +287,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CPU%E5%A3%9E%E6%8E%89%E6%9C%83%E9%96%8B%E4%B8%8D%E8%B5%B7%E4%BE%86%E6%88%96%E8%91%97%E4%B8%80%E7%9B%B4%E7%95%B6%E6%A9%9F-%E9%82%84%E5%A5%BD%E6%88%91%E9%83%BD%E4%B8%8D%E6%9C%83QQ"><span class="nav-number">1.</span> <span class="nav-text">CPU壞掉會開不起來或著一直當機~~~還好我都不會QQ</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
