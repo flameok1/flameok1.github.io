@@ -28,7 +28,7 @@
 <meta property="og:description" content="下面都是C++11新功能或調整~    這邊左右值重點XDDD左值為運算式結束後還會持續存在的非暫時物件右值則為運算式結束後就不再存在之暫時物件用在一些傳參數時避免做出call by value動作，導致複製出新物件 右值參照  T &amp;&amp;用於增加對暫存物件使用主動宣告成右ref或傳入參數右ref，也不會被判定成右ref，需使用std::move轉換 下面使用重載測試呼叫結果~~~">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-06-29T10:02:18.000Z">
-<meta property="article:modified_time" content="2025-06-19T14:17:49.700Z">
+<meta property="article:modified_time" content="2025-07-03T22:54:32.152Z">
 <meta property="article:author" content="FLAMEc">
 <meta property="article:tag" content="C++,C#">
 <meta name="twitter:card" content="summary">
@@ -182,7 +182,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2025-06-19 22:17:49" itemprop="dateModified" datetime="2025-06-19T22:17:49+08:00">2025-06-19</time>
+                <time title="修改時間：2025-07-04 06:54:32" itemprop="dateModified" datetime="2025-07-04T06:54:32+08:00">2025-07-04</time>
               </span>
 
           
@@ -231,7 +231,7 @@
 <li><p>lambda 匿名函式 ， 就是C#的 () &#x3D;&gt; {} ， 但是C++要用外部引用需要設定<br><a href="%E5%8F%83%E6%95%B8">外部引用</a> -&gt; return型態 { 函式內容 }<br>[](int param) -&gt; int { return param+1; }</p>
 </li>
 </ol>
-<p>外部引用設定<br>[]      &#x2F;&#x2F; 未定義不能用<br>[x, &amp;y] &#x2F;&#x2F; x傳值，y傳ref<br>[&amp;]     &#x2F;&#x2F; 全部傳值<br>[&#x3D;]     &#x2F;&#x2F; 全部傳ref<br>[&amp;, x]  &#x2F;&#x2F; x傳值，其他全部傳ref<br>[&#x3D;, &amp;z] &#x2F;&#x2F; z傳ref，其他全部傳值</p>
+<p>外部引用設定<br>[]      &#x2F;&#x2F; 未定義不能用<br>[x, &amp;y] &#x2F;&#x2F; x傳值，y傳ref<br>[&amp;]     &#x2F;&#x2F; 全部傳ref<br>[&#x3D;]     &#x2F;&#x2F; 全部傳值<br>[&amp;, x]  &#x2F;&#x2F; x傳值，其他全部傳ref<br>[&#x3D;, &amp;z] &#x2F;&#x2F; z傳ref，其他全部傳值</p>
 <p>this指標用傳值</p>
 <p>mutable，可以使lambda能修改傳值參數，且值能保留，因為式傳值依然不影響外部值</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> mt = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">auto</span> f = [mt]() mutable &#123;<span class="keyword">return</span> mt++; &#125;;</span><br><span class="line"></span><br><span class="line">f(); <span class="comment">//return 5</span></span><br><span class="line">f(); <span class="comment">//return 6</span></span><br></pre></td></tr></table></figure>
@@ -394,7 +394,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
