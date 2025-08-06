@@ -149,6 +149,80 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2024/07/20/FindValidMatrix/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLAMEc">
+      <meta itemprop="description" content="一覽無遺">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FLAMEc隨手記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/07/20/FindValidMatrix/" class="post-title-link" itemprop="url">算出可用矩陣用ROW SUM和COL SUM</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-07-20 10:42:46" itemprop="dateCreated datePublished" datetime="2024-07-20T10:42:46+08:00">2024-07-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2025-06-19 22:17:49" itemprop="dateModified" datetime="2025-06-19T22:17:49+08:00">2025-06-19</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="是leetcode的題目，題目如下-直接複製的-："><a href="#是leetcode的題目，題目如下-直接複製的-：" class="headerlink" title="是leetcode的題目，題目如下(直接複製的)："></a>是leetcode的題目，題目如下(直接複製的)：</h3><p>You are given two arrays rowSum and colSum of non-negative integers where rowSum[i] is the sum of the elements in the ith row and colSum[j] is the sum of the elements of the jth column of a 2D matrix. In other words, you do not know the elements of the matrix, but you do know the sums of each row and column.</p>
+<p>Find any matrix of non-negative integers of size rowSum.length x colSum.length that satisfies the rowSum and colSum requirements.</p>
+<p>Return a 2D array representing any matrix that fulfills the requirements. It’s guaranteed that at least one matrix that fulfills the requirements exists.</p>
+<p>Example 1:</p>
+<p>Input: rowSum &#x3D; [3,8], colSum &#x3D; [4,7]<br>Output: [[3,0],<br>         [1,7]]<br>Explanation:<br>0th row: 3 + 0 &#x3D; 3 &#x3D;&#x3D; rowSum[0]<br>1st row: 1 + 7 &#x3D; 8 &#x3D;&#x3D; rowSum[1]<br>0th column: 3 + 1 &#x3D; 4 &#x3D;&#x3D; colSum[0]<br>1st column: 0 + 7 &#x3D; 7 &#x3D;&#x3D; colSum[1]<br>The row and column sums match, and all matrix elements are non-negative.<br>Another possible matrix is: [[1,2],<br>                             [3,5]]<br>Example 2:</p>
+<p>Input: rowSum &#x3D; [5,7,10], colSum &#x3D; [8,6,8]<br>Output: [[0,5,0],<br>         [6,1,0],<br>         [2,0,8]]</p>
+<h3 id="心得："><a href="#心得：" class="headerlink" title="心得："></a>心得：</h3><p>看來看去這一題主要是要知道這個問題的解法，<font color=#FF0000>就像魔術方塊有公式解</font>，<br>這個問題應該也有類似的公式解，應該不是考推導而是考公式解如何轉化成Code。</p>
+<p>一開始我是沒碰過這個問題的，所以卡了一下，要推導出公式還是有點難度的QQ<br>所以看了一下Hint，Hint中提到大概做法，可能是公式之一吧，其實也是有點懷疑真的嗎XD?</p>
+<p>Hint 1<br>Find the smallest rowSum or colSum, and let it be x. Place that number in the grid, and subtract x from rowSum and colSum. Continue until all the sums are satisfied.</p>
+<p>一步一步測試後確認可行。就像魔術方塊公式解也有多種，應該也是有更簡化的方法的，這邊就不繼續研究了。</p>
+<h3 id="最後如下；"><a href="#最後如下；" class="headerlink" title="最後如下；"></a>最後如下；</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">public:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;&gt; restoreMatrix(<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;&amp; rowSum, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;&amp; colSum) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;&gt; ans(rowSum.size(), <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(colSum.size(),<span class="number">0</span>));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> minRor = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> minCol = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            minRor = <span class="number">0</span>;</span><br><span class="line">            minCol = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//找最小值</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span> ; i &lt; rowSum.size(); i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>((rowSum[i] &gt; <span class="number">0</span> &amp;&amp; rowSum[i] &lt; rowSum[minRor]) || rowSum[minRor] == <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    minRor = i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//找最小值</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span> ; i &lt; colSum.size(); i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>((colSum[i] &gt; <span class="number">0</span> &amp;&amp; colSum[i] &lt; colSum[minCol]) || colSum[minCol] == <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    minCol = i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//都是0結束</span></span><br><span class="line">            <span class="keyword">if</span>(rowSum[minRor] == <span class="number">0</span> &amp;&amp; colSum[minCol] == <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//塞結果和更新值</span></span><br><span class="line">            <span class="keyword">if</span>(rowSum[minRor] &gt; colSum[minCol])</span><br><span class="line">            &#123;</span><br><span class="line">                ans[minRor][minCol] = colSum[minCol];</span><br><span class="line">                rowSum[minRor] -= colSum[minCol]; <span class="comment">//這邊就是一開始我最懷疑地方，直接改不會沒算出來嗎XD?結果沒事!!</span></span><br><span class="line">                colSum[minCol] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                ans[minRor][minCol] = rowSum[minRor];</span><br><span class="line">                colSum[minCol] -= rowSum[minRor]; <span class="comment">//這邊就是一開始我最懷疑地方，直接改不會沒算出來嗎XD?結果沒事!!</span></span><br><span class="line">                rowSum[minRor] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2024/07/20/kotlin/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -539,92 +613,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2024/06/28/newcomputer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="FLAMEc">
-      <meta itemprop="description" content="一覽無遺">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FLAMEc隨手記">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/06/28/newcomputer/" class="post-title-link" itemprop="url">組新電腦之神奇CPU!!</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2024-06-28 23:02:46" itemprop="dateCreated datePublished" datetime="2024-06-28T23:02:46+08:00">2024-06-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2025-06-19 22:17:49" itemprop="dateModified" datetime="2025-06-19T22:17:49+08:00">2025-06-19</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>2024&#x2F;06&#x2F;25下班~~~~~~~~</p>
-<p>剛收到在欣亞電腦網購的電腦零件!!!</p>
-<p>因為自己想組裝所以沒有請欣亞電腦裝，</p>
-<p>因為小孩關係10點多才開始開箱裝XDDD</p>
-<p>一直忙到12點多…正常開機!!!!!!!!!</p>
-<p>然後進BIOS…我去!!  CPU為啥溫度0??????????</p>
-<p>想說風扇稍微有在轉…先灌Win11看看吧QQ</p>
-<p>灌完進去桌面…順手點了MSI Center看狀況…</p>
-<p>歐不!!  CPU溫度0…………..</p>
-<p>嚇死啊!!!不會快燒了吧???…利馬關機…</p>
-<p>隔天想說會不會是BIOS設定錯誤打電話給MSI客服!!!</p>
-<p>客服小姐很有耐心XDDD  結果搞了15分鐘還是要拿主機板去MSI檢測0.0…</p>
-<p>還好今天要出門順路過去!!!，測試結果主機板正常&#x3D;口&#x3D;</p>
-<p>(驚)不會CPU壞掉吧??回家馬上仔細看CPU有沒有損傷，結果正常!!!</p>
-<p>隔天馬上連絡欣亞帶去店面檢查!!!</p>
-<p>欣亞客人蠻多的，來來去去，店員很和善!!!</p>
-<p>測試員正在測其他電腦，順便聊了兩句!!</p>
-<h2 id="CPU壞掉會開不起來或著一直當機-還好我都不會QQ"><a href="#CPU壞掉會開不起來或著一直當機-還好我都不會QQ" class="headerlink" title="CPU壞掉會開不起來或著一直當機~~~還好我都不會QQ"></a>CPU壞掉會開不起來或著一直當機~~~還好我都不會QQ</h2><p>然後一測…CPU有問題!!!，真瑕疵品吧QQ</p>
-<p>幸好可以換新XDDD，差點嚇死啊!!</p>
-<p>CPU好貴阿QQ，經過這次事情再碰到類似狀況應該就不會這麼擔心了XDDD</p>
-<p>如果有碰到類似情況不要急，請聯絡客服然後帶去店面檢查喔!!!</p>
-<p>這邊提醒大家剛買的電腦盒子不要丟喔!!送修換新要用到~~~</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -694,7 +682,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
