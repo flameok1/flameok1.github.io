@@ -20,31 +20,33 @@
     var CONFIG = {"hostname":"flameok1.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="一覽無遺">
-<meta property="og:type" content="website">
-<meta property="og:title" content="FLAMEc隨手記">
-<meta property="og:url" content="https://flameok1.github.io/index.html">
+  <meta name="description" content="我這次要用Vue3+Websocket對接rouletteserver C++ Server~ 封包要使用protobuff，比較方便啊!! 一開始我是去抓protobuff release版本 github連結(https:&#x2F;&#x2F;github.com&#x2F;protocolbuffers&#x2F;protobuf&#x2F;releases)這時候版本是 32.0-rc2~ 抓了protobuf-32.0-rc2.zip">
+<meta property="og:type" content="article">
+<meta property="og:title" content="protobuff+vs2022鬼打牆心得">
+<meta property="og:url" content="https://flameok1.github.io/2025/08/09/protobuff/index.html">
 <meta property="og:site_name" content="FLAMEc隨手記">
-<meta property="og:description" content="一覽無遺">
+<meta property="og:description" content="我這次要用Vue3+Websocket對接rouletteserver C++ Server~ 封包要使用protobuff，比較方便啊!! 一開始我是去抓protobuff release版本 github連結(https:&#x2F;&#x2F;github.com&#x2F;protocolbuffers&#x2F;protobuf&#x2F;releases)這時候版本是 32.0-rc2~ 抓了protobuf-32.0-rc2.zip">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2025-08-09T15:36:21.000Z">
+<meta property="article:modified_time" content="2025-08-09T16:10:28.670Z">
 <meta property="article:author" content="FLAMEc">
 <meta property="article:tag" content="C++,C#">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://flameok1.github.io/">
+<link rel="canonical" href="https://flameok1.github.io/2025/08/09/protobuff/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>FLAMEc隨手記</title>
+  <title>protobuff+vs2022鬼打牆心得 | FLAMEc隨手記</title>
   
 
 
@@ -143,9 +145,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
@@ -161,10 +164,9 @@
       <meta itemprop="name" content="FLAMEc隨手記">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/08/09/protobuff/" class="post-title-link" itemprop="url">protobuff+vs2022鬼打牆心得</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          protobuff+vs2022鬼打牆心得
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -194,7 +196,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>我這次要用Vue3+Websocket對接rouletteserver C++ Server~</p>
+        <p>我這次要用Vue3+Websocket對接rouletteserver C++ Server~</p>
 <p>封包要使用protobuff，比較方便啊!!</p>
 <h1 id="一開始我是去抓protobuff-release版本-github連結-https-github-com-protocolbuffers-protobuf-releases"><a href="#一開始我是去抓protobuff-release版本-github連結-https-github-com-protocolbuffers-protobuf-releases" class="headerlink" title="一開始我是去抓protobuff release版本 github連結(https://github.com/protocolbuffers/protobuf/releases)"></a>一開始我是去抓protobuff release版本 github連結(<a target="_blank" rel="noopener" href="https://github.com/protocolbuffers/protobuf/releases">https://github.com/protocolbuffers/protobuf/releases</a>)</h1><p>這時候版本是 32.0-rc2~</p>
 <p>抓了protobuf-32.0-rc2.zip和protoc-32.0-rc-2-win64.zip</p>
@@ -230,340 +232,31 @@
 <p>字串也不會很神奇的空值!!</p>
 <h1 id="順便提一下，vcpkg安裝的版本會比github上面的版本稍舊，大概是穩定版關係"><a href="#順便提一下，vcpkg安裝的版本會比github上面的版本稍舊，大概是穩定版關係" class="headerlink" title="順便提一下，vcpkg安裝的版本會比github上面的版本稍舊，大概是穩定版關係"></a>順便提一下，vcpkg安裝的版本會比github上面的版本稍舊，大概是穩定版關係</h1><p>這邊沒紀錄用CMake開vs2022專案，個人覺得直接用vcpkg比較快用方便就不說了~</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2025/08/09/hello-world/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="FLAMEc">
-      <meta itemprop="description" content="一覽無遺">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FLAMEc隨手記">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/08/09/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2025-08-09 23:33:34" itemprop="dateCreated datePublished" datetime="2025-08-09T23:33:34+08:00">2025-08-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2025-06-19 22:17:49" itemprop="dateModified" datetime="2025-06-19T22:17:49+08:00">2025-06-19</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/08/09/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2025/08/06/fourhour/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="FLAMEc">
-      <meta itemprop="description" content="一覽無遺">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FLAMEc隨手記">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/08/06/fourhour/" class="post-title-link" itemprop="url">我是不是取回了每天4小時?</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2025-08-06 23:46:23" itemprop="dateCreated datePublished" datetime="2025-08-06T23:46:23+08:00">2025-08-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2025-08-07 00:03:19" itemprop="dateModified" datetime="2025-08-07T00:03:19+08:00">2025-08-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天又是一個燒腦的日子!!</p>
-<p>每一次決定重要事情其實都不簡單~</p>
-<p>我之前通常都做通勤時間來回總和3小時上下的工作!!</p>
-<p>其實我也沒啥感覺啦…</p>
-<p>但是有感覺的是小孩子!!!!!!!</p>
-<p>我總共經歷了3種不同時間，就用A、B、C來說吧!!!</p>
-<p>A最快6點40多就能到家，當然不是因為比較近，是比較早下班(5:30)~</p>
-<p>B大概在7點10&#x3D;&gt;7點40間到家~</p>
-<p>C大概在7點40&#x3D;&gt;8點30間到家~</p>
-<p>剛好改變路線也是A&#x3D;&gt;B&#x3D;&gt;C~</p>
-<p>一開始A&#x3D;&gt;B的時候因為小孩4歲，就感覺小孩比較不理我這樣~~~</p>
-<p>畢竟晚下班，在家裡時間少了…</p>
-<p>在換成B&#x3D;&gt;C中間剛好有一個月在家陪小孩!!!</p>
-<p>是能馬上覺得小孩忽然知道爸爸了這樣~~~</p>
-<p>然後B&#x3D;&gt;C後太晚到家，小孩鬧不上學和說我晚回家~~~</p>
-<p>也是拉，小孩5歲懂更多了!!!也許也是在家一個月影響~~~</p>
-<p>變成這樣讓我認真思考”我是不是都太完回家了?”</p>
-<p>因為通勤時間可能都超過3小時~</p>
-<p>那就是說晚上沒有7點半我不會在家!!</p>
-<p>但是小孩可能9點就睡了，仔細算算時間真的很少…</p>
-<p>在這次找工作loop中忽然我覺得…</p>
-<p>41歲的我應該先陪在家人身邊!!!</p>
-<p>可能小孩大一點之後，再繼續到稍遠一點的地方找收入更好的工作吧!!</p>
-<p>所以我辭職了!!!  要找近的工作~~~</p>
-<p>當然這是確定不會有經濟上問題才做的選擇!</p>
-<p>這樣做不知道好不好，不過前進一步是確定的!!!</p>
-<p>至少我開始考慮一些我以前不太想的事情~~~</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2025/07/06/findjob/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="FLAMEc">
-      <meta itemprop="description" content="一覽無遺">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FLAMEc隨手記">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/07/06/findjob/" class="post-title-link" itemprop="url">開始面試找工作拉!!!</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2025-07-06 00:36:45 / 修改時間：00:40:12" itemprop="dateCreated datePublished" datetime="2025-07-06T00:36:45+08:00">2025-07-06</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="開始面試找工作拉"><a href="#開始面試找工作拉" class="headerlink" title="開始面試找工作拉!!!"></a>開始面試找工作拉!!!</h2><p>7&#x2F;4號第一場面試!!</p>
-<p>結果也不知好壞~~~</p>
-<p>雖然104點了一堆看起來很棒的職缺…</p>
-<h1 id="反應不太好啊"><a href="#反應不太好啊" class="headerlink" title="反應不太好啊!!!"></a>反應不太好啊!!!</h1><p>下週只有2個面試…</p>
-<p>繼續加油吧!!</p>
-<p>這次當無業遊民其實已經有幾個方案打算了!!</p>
-<p>最糟糕狀況就是找半天沒工作…</p>
-<p>這個也有辦法應對!!</p>
-<p>雖然剛好PS plus升級遊戲內容多了暗黑4…</p>
-<p>稍微多玩了一下XDD</p>
-<p>也差不多是振作的時候了!</p>
-<h1 id="GOGOGGO"><a href="#GOGOGGO" class="headerlink" title="GOGOGGO~"></a>GOGOGGO~</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2025/06/19/win11ssd/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="FLAMEc">
-      <meta itemprop="description" content="一覽無遺">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FLAMEc隨手記">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/06/19/win11ssd/" class="post-title-link" itemprop="url">Win11裝SSD!!!</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2025-06-19 23:20:22" itemprop="dateCreated datePublished" datetime="2025-06-19T23:20:22+08:00">2025-06-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2025-07-03 12:04:11" itemprop="dateModified" datetime="2025-07-03T12:04:11+08:00">2025-07-03</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>怎麼說呢…</p>
-<p>去年被裁員買新電腦的時候並沒有買SSD~~~</p>
-<h3 id="直接用傳統硬碟執行Win11了"><a href="#直接用傳統硬碟執行Win11了" class="headerlink" title="直接用傳統硬碟執行Win11了~~~"></a>直接用傳統硬碟執行Win11了~~~</h3><h1 id="結果是可以執行"><a href="#結果是可以執行" class="headerlink" title="結果是可以執行!!!!!!!!!!!"></a>結果是可以執行!!!!!!!!!!!</h1><p>但是開機慢，到桌面以後…</p>
-<h1 id="會卡10分鐘以上-按什麼都不會動"><a href="#會卡10分鐘以上-按什麼都不會動" class="headerlink" title="會卡10分鐘以上~~~~~~~~~按什麼都不會動!!!!!!!!!"></a>會卡10分鐘以上~~~~~~~~~按什麼都不會動!!!!!!!!!</h1><p>整個卡頓住…</p>
-<p>做任何事情都有可能會卡頓住…</p>
-<p>所以這段時間我都先開機…然後放著打一下PS5…</p>
-<p>然後再看情況XDDDDDDD</p>
-<h3 id="整個很慢很卡很無言"><a href="#整個很慢很卡很無言" class="headerlink" title="整個很慢很卡很無言~"></a>整個很慢很卡很無言~</h3><p>然後最近又是人生轉變離職點!!</p>
-<h2 id="目前工作狀況還行…但是領薪水狀況就是各種抱歉…"><a href="#目前工作狀況還行…但是領薪水狀況就是各種抱歉…" class="headerlink" title="目前工作狀況還行…但是領薪水狀況就是各種抱歉…"></a>目前工作狀況還行…但是領薪水狀況就是各種抱歉…</h2><h2 id="薪水沒拖個幾天拿不到-有時候還先拿一點…"><a href="#薪水沒拖個幾天拿不到-有時候還先拿一點…" class="headerlink" title="薪水沒拖個幾天拿不到?? 有時候還先拿一點…"></a>薪水沒拖個幾天拿不到?? 有時候還先拿一點…</h2><h2 id="還有一點一直欠著…"><a href="#還有一點一直欠著…" class="headerlink" title="還有一點一直欠著…"></a>還有一點一直欠著…</h2><p>整個很遺憾…</p>
-<p>所以只好離職了!!</p>
-<p>又進入找工作狀態了~</p>
-<p>不過這次工作也算經歷很多~</p>
-<h1 id="真是什麼都碰到啊"><a href="#真是什麼都碰到啊" class="headerlink" title="真是什麼都碰到啊!?"></a>真是什麼都碰到啊!?</h1><h1 id="前端後台舊專案-滿滿一堆…"><a href="#前端後台舊專案-滿滿一堆…" class="headerlink" title="前端後台舊專案! 滿滿一堆…"></a>前端後台舊專案! 滿滿一堆…</h1><p>算了不多說!</p>
-<p>希望之後順利~~~</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
-  </nav>
 
 
 
@@ -615,6 +308,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E9%96%8B%E5%A7%8B%E6%88%91%E6%98%AF%E5%8E%BB%E6%8A%93protobuff-release%E7%89%88%E6%9C%AC-github%E9%80%A3%E7%B5%90-https-github-com-protocolbuffers-protobuf-releases"><span class="nav-number">1.</span> <span class="nav-text">一開始我是去抓protobuff release版本 github連結(https:&#x2F;&#x2F;github.com&#x2F;protocolbuffers&#x2F;protobuf&#x2F;releases)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%86%E6%98%AF%E5%91%A2%E2%80%A6%E6%90%9E%E4%BA%86%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E8%BE%A6%E6%B3%95%E5%9C%A8vs2022%E5%B0%88%E6%A1%88%E4%B8%AD%E7%B7%A8%E8%AD%AF%E9%81%8E"><span class="nav-number">2.</span> <span class="nav-text">但是呢…搞了很久都沒辦法在vs2022專案中編譯過!!!</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%AF%E6%9C%89%E8%83%BD%E6%9C%83%E8%A2%AB%E5%81%9C%E9%86%92%E8%A6%81%E9%96%8B%E5%95%9Fmanifest"><span class="nav-number">3.</span> <span class="nav-text">可有能會被停醒要開啟manifest!!!</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%84%B6%E5%BE%8CBuild%E6%88%90%E5%8A%9F%E4%BA%86-%E5%A4%A7%E6%AD%A1%E5%96%9CXDDDDDDDDDDDD"><span class="nav-number">4.</span> <span class="nav-text">然後Build成功了!!!!!!!!!!!!!大歡喜XDDDDDDDDDDDD</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%98%AF%E7%A9%BA%E5%80%BC%EF%BC%8C%E6%B2%92%E6%9C%89%E8%B3%87%E6%96%99%EF%BC%8C%E6%88%91%E7%A0%94%E7%A9%B6%E5%91%A2%E5%BE%88%E4%B9%85%E6%89%BE%E4%B8%8D%E5%88%B0%E5%95%8F%E9%A1%8C0-0%E2%80%A6%E6%98%8E%E6%98%8E%E8%A8%AD%E5%AE%9A%E4%BA%86%E2%80%A6"><span class="nav-number">5.</span> <span class="nav-text">是空值，沒有資料，我研究呢很久找不到問題0.0…明明設定了…</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%8E%E8%87%B4debug%E7%89%88%E6%9C%AC%E7%94%A8%E9%8C%AFdll%EF%BC%8C%E7%84%B6%E5%BE%8C%E5%B0%B1string%E7%A9%A9%E5%AE%9A%E7%A9%BA%E5%80%BC%EF%BC%8C%E5%8F%AA%E6%9C%89int%E7%AD%89%E6%9C%89%E6%95%88%E6%9E%9C"><span class="nav-number">6.</span> <span class="nav-text">導致debug版本用錯dll，然後就string穩定空值，只有int等有效果~</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A0%86%E4%BE%BF%E6%8F%90%E4%B8%80%E4%B8%8B%EF%BC%8Cvcpkg%E5%AE%89%E8%A3%9D%E7%9A%84%E7%89%88%E6%9C%AC%E6%9C%83%E6%AF%94github%E4%B8%8A%E9%9D%A2%E7%9A%84%E7%89%88%E6%9C%AC%E7%A8%8D%E8%88%8A%EF%BC%8C%E5%A4%A7%E6%A6%82%E6%98%AF%E7%A9%A9%E5%AE%9A%E7%89%88%E9%97%9C%E4%BF%82"><span class="nav-number">7.</span> <span class="nav-text">順便提一下，vcpkg安裝的版本會比github上面的版本稍舊，大概是穩定版關係</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -149,6 +149,241 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2024/06/30/ProcessThread/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLAMEc">
+      <meta itemprop="description" content="一覽無遺">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FLAMEc隨手記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/06/30/ProcessThread/" class="post-title-link" itemprop="url">進程線程</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-06-30 08:39:22" itemprop="dateCreated datePublished" datetime="2024-06-30T08:39:22+08:00">2024-06-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2025-06-19 22:17:49" itemprop="dateModified" datetime="2025-06-19T22:17:49+08:00">2025-06-19</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="進程-Process"><a href="#進程-Process" class="headerlink" title="進程 Process"></a>進程 Process</h2><p>就是程式執行後的狀態，在工作管理員看到的狀態~</p>
+<h2 id="線程-Thread"><a href="#線程-Thread" class="headerlink" title="線程 Thread"></a>線程 Thread</h2><p>一個Process至少會有一個Main Thread，實際執行程式碼的也是Main Thread.</p>
+<h2 id="多線程-MultiThread"><a href="#多線程-MultiThread" class="headerlink" title="多線程 MultiThread"></a>多線程 MultiThread</h2><p>就是一個Process除了有Main Thread以外，還會多開其他Thread去做任務.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2024/06/29/c-11note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLAMEc">
+      <meta itemprop="description" content="一覽無遺">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FLAMEc隨手記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/06/29/c-11note/" class="post-title-link" itemprop="url">c++ 11 快速複習筆記</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-06-29 18:02:18" itemprop="dateCreated datePublished" datetime="2024-06-29T18:02:18+08:00">2024-06-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2025-07-04 06:54:32" itemprop="dateModified" datetime="2025-07-04T06:54:32+08:00">2025-07-04</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>下面都是C++11新功能或調整~</p>
+<ol>
+<li></li>
+</ol>
+<h1 id="這邊左右值重點XDDD"><a href="#這邊左右值重點XDDD" class="headerlink" title="這邊左右值重點XDDD"></a>這邊左右值重點XDDD</h1><h2 id="左值為運算式結束後還會持續存在的非暫時物件"><a href="#左值為運算式結束後還會持續存在的非暫時物件" class="headerlink" title="左值為運算式結束後還會持續存在的非暫時物件"></a>左值為運算式結束後還會持續存在的非暫時物件</h2><h2 id="右值則為運算式結束後就不再存在之暫時物件"><a href="#右值則為運算式結束後就不再存在之暫時物件" class="headerlink" title="右值則為運算式結束後就不再存在之暫時物件"></a>右值則為運算式結束後就不再存在之暫時物件</h2><p>用在一些傳參數時避免做出call by value動作，導致複製出新物件</p>
+<p>右值參照  T &amp;&amp;<br>用於增加對暫存物件使用<br>主動宣告成右ref或傳入參數右ref，也不會被判定成右ref，需使用std::move轉換</p>
+<p>下面使用重載測試呼叫結果~~~</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">checkrref</span><span class="params">(<span class="type">int</span>&amp;&amp; t)</span> &#123; <span class="keyword">return</span> <span class="literal">true</span>; &#125;</span><br><span class="line"><span class="type">bool</span> <span class="title function_">checkrref</span><span class="params">(<span class="type">const</span> <span class="type">int</span>&amp; t)</span> &#123; <span class="keyword">return</span> <span class="literal">false</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">getRint</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">test</span><span class="params">(<span class="type">int</span>&amp;&amp; t)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="built_in">std</span>::boolalpha &lt;&lt; checkrref(t) &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="built_in">std</span>::boolalpha &lt;&lt; checkrref(<span class="built_in">std</span>::move&lt;<span class="type">int</span>&amp;&gt;(t)) &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="built_in">std</span>::boolalpha &lt;&lt; checkrref(getRint()) &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    test(<span class="number">5</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>false<br>true<br>true</p>
+<ol start="2">
+<li>const 進化版 constexpr</li>
+</ol>
+<p>比如常數陣列宣告，可用constexpr變成能呼叫函示或物件建構式</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">constexpr <span class="type">int</span> <span class="title function_">FunSize</span><span class="params">()</span> &#123;<span class="keyword">return</span> <span class="number">10</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> test[FunSize() + <span class="number">5</span>]； <span class="comment">//15</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="3">
+<li><p>初始化串列構造式<br>std::initializer_list<T><br>可以使建構參數或函式參數變成可透過語法{}靜態的建構，建構後固定不能改，begin傳回指標<br>ex int v[]{1,2,3,4,5}; 編譯器會把{…}變成initializer_list丟給陣列XDD</p>
+</li>
+<li><p>初始化語法擴展，更方便吧</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ex</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="type">int</span> a,b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ex t&#123;<span class="number">0</span>,<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>auto 和 decltype<br>auto 用法類似 var, ref型態要用auto&amp;，指標不用<br>decltype(T) 能在編譯時期算出型態</p>
+</li>
+<li><p>範圍for</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> ar[] = &#123;...&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> &amp;n : ar)</span><br><span class="line">&#123;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>lambda 匿名函式 ， 就是C#的 () &#x3D;&gt; {} ， 但是C++要用外部引用需要設定<br><a href="%E5%8F%83%E6%95%B8">外部引用</a> -&gt; return型態 { 函式內容 }<br>[](int param) -&gt; int { return param+1; }</p>
+</li>
+</ol>
+<p>外部引用設定<br>[]      &#x2F;&#x2F; 未定義不能用<br>[x, &amp;y] &#x2F;&#x2F; x傳值，y傳ref<br>[&amp;]     &#x2F;&#x2F; 全部傳ref<br>[&#x3D;]     &#x2F;&#x2F; 全部傳值<br>[&amp;, x]  &#x2F;&#x2F; x傳值，其他全部傳ref<br>[&#x3D;, &amp;z] &#x2F;&#x2F; z傳ref，其他全部傳值</p>
+<p>this指標用傳值</p>
+<p>mutable，可以使lambda能修改傳值參數，且值能保留，因為式傳值依然不影響外部值</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> mt = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">auto</span> f = [mt]() mutable &#123;<span class="keyword">return</span> mt++; &#125;;</span><br><span class="line"></span><br><span class="line">f(); <span class="comment">//return 5</span></span><br><span class="line">f(); <span class="comment">//return 6</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="8">
+<li><p>返回型別後置的函式宣告，如下int，可解決decltype計算一些template的回傳型態</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> <span class="title function_">funcenddef</span><span class="params">()</span> -&gt; <span class="type">int</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">template &lt;typename Container, typename Index&gt;</span><br><span class="line"><span class="keyword">auto</span> <span class="title function_">DoSomething</span><span class="params">(Container&amp; c, Index i)</span> -&gt; <span class="title function_">decltype</span><span class="params">(c[i])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> c[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>物件建構可以呼叫自己的其他建構</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    A():A(<span class="number">0</span>) &#123; &#125;</span><br><span class="line">    A(<span class="type">int</span> i) &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>override檢查<br>virtual void virtual_func(float) override;  如果沒有繼承就會出錯</p>
+</li>
+<li><p>新nullptr定義指標空值，可以避免NULL或0有時候多載造成的錯誤</p>
+</li>
+<li><p>強型別列舉</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="keyword">class</span> <span class="title">Name</span> :</span> <span class="type">int</span></span><br><span class="line">&#123;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>int是預設值，可不指定，也可換成其他型態如uint</p>
+</li>
+<li><p>using 很像typedef，差別是能給模板別名<br>using B &#x3D; A<br>typedef A B</p>
+</li>
+<li><p>template可以指定默認預設值<br>typename T &#x3D; A</p>
+</li>
+<li><p>char16_t , char32_t 對應UTF16和UTF32，原本的char對應UTF8</p>
+</li>
+<li><p>thread_local 不管宣告在哪都會變成每個thread獨立的static物件<br>值會保留且獨立!!</p>
+</li>
+<li><p>default設定預設建構式<br>delete禁止產生設定函式</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	A() = <span class="keyword">default</span>; <span class="comment">//預設建構式</span></span><br><span class="line">	A&amp; operator=(<span class="type">const</span> A&amp;) = delete; 禁止產生複製函式</span><br><span class="line">	</span><br><span class="line">	<span class="type">void</span> <span class="title function_">b</span><span class="params">(<span class="type">int</span> i)</span>; <span class="comment">//輸入int</span></span><br><span class="line">	<span class="type">void</span> <span class="title function_">b</span><span class="params">(<span class="type">float</span> f)</span> = delete;<span class="comment">//禁止輸入float</span></span><br><span class="line">	template&lt;class T&gt; <span class="type">void</span> <span class="title function_">b</span><span class="params">(T)</span> = delete; 禁止輸入<span class="type">int</span>以外資料</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>static_assert 編譯時期測試assertion</p>
+</li>
+<li><p>C++標準thread，尚未測試，以前都用Win32的thread…<br>std::thread<br>detach ， 執行後不再可控制thread，只能等main thread結束後自行銷毀<br>joint ， 等待thread結束</p>
+</li>
+</ol>
+<p>量級越大消耗越大吧!<br>std::mutex 1量級的類別，本身就能鎖，但是可能會忘記解鎖XDDD<br>std::lock_guard 2量級的類別，只能等結束自毀解鎖<br>std::unique_lock 3量級的類別，可以靈活unlock再lock，自毀也會解鎖</p>
+<ol start="20">
+<li><p>多元組型別，就是多個不同型態的東西已特定順序排列的結構<br>std::tuple;</p>
+</li>
+<li><p>雜湊表(Hash table) ， 查詢速度極快!!</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::<span class="built_in">unordered_map</span>&lt;T1,T2&gt;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">unordered_set</span>&lt;T&gt;</span><br></pre></td></tr></table></figure>
+<p>等等…</p>
+</li>
+<li><p>正規表示式 std::regex ， 對字串做檢查的</p>
+</li>
+<li><p>std::shared_ptr是一種ref計數的指針，沒有人在ref時才會銷毀記憶體，可assign給別人，會增加ref count<br>std::unique_ptr是自己生命周期到的時候會自動銷毀記憶體，不能assign給別人</p>
+</li>
+<li><p>新亂數產生器<br>linear_congruential<br>subtract_with_carry<br>mersenne_twister</p>
+</li>
+<li><p>std::ref，包裝參照，用在模板需要傳照的時候使用</p>
+</li>
+<li><p>std::result_of，計算回傳型別統一方法，用在模板return不一樣狀況</p>
+</li>
+<li><p>std::iota，能對std::array做連續整數填充</p>
+</li>
+<li><p>std::function 就是 C#System.Action</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">std</span>::function&lt;<span class="type">int</span>(<span class="type">int</span>, <span class="type">int</span>)&gt; func = add;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>參考文件:<br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-tw/C%2B%2B11/">wiki c++11</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2024/06/28/newcomputer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -307,83 +542,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2024/06/27/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="FLAMEc">
-      <meta itemprop="description" content="一覽無遺">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FLAMEc隨手記">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/06/27/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2024-06-27 22:57:18" itemprop="dateCreated datePublished" datetime="2024-06-27T22:57:18+08:00">2024-06-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2025-06-19 22:17:49" itemprop="dateModified" datetime="2025-06-19T22:17:49+08:00">2025-06-19</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -453,7 +611,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
