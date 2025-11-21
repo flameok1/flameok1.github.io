@@ -149,6 +149,182 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2025/08/09/protobuff/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLAMEc">
+      <meta itemprop="description" content="一覽無遺">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FLAMEc隨手記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/08/09/protobuff/" class="post-title-link" itemprop="url">protobuff+vs2022鬼打牆心得</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2025-08-09 23:36:21" itemprop="dateCreated datePublished" datetime="2025-08-09T23:36:21+08:00">2025-08-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2025-08-10 00:10:28" itemprop="dateModified" datetime="2025-08-10T00:10:28+08:00">2025-08-10</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>我這次要用Vue3+Websocket對接rouletteserver C++ Server~</p>
+<p>封包要使用protobuff，比較方便啊!!</p>
+<h1 id="一開始我是去抓protobuff-release版本-github連結-https-github-com-protocolbuffers-protobuf-releases"><a href="#一開始我是去抓protobuff-release版本-github連結-https-github-com-protocolbuffers-protobuf-releases" class="headerlink" title="一開始我是去抓protobuff release版本 github連結(https://github.com/protocolbuffers/protobuf/releases)"></a>一開始我是去抓protobuff release版本 github連結(<a target="_blank" rel="noopener" href="https://github.com/protocolbuffers/protobuf/releases">https://github.com/protocolbuffers/protobuf/releases</a>)</h1><p>這時候版本是 32.0-rc2~</p>
+<p>抓了protobuf-32.0-rc2.zip和protoc-32.0-rc-2-win64.zip</p>
+<p>前者是有source code~後者有protoc.exe</p>
+<h1 id="但是呢…搞了很久都沒辦法在vs2022專案中編譯過"><a href="#但是呢…搞了很久都沒辦法在vs2022專案中編譯過" class="headerlink" title="但是呢…搞了很久都沒辦法在vs2022專案中編譯過!!!"></a>但是呢…搞了很久都沒辦法在vs2022專案中編譯過!!!</h1><p>然後另尋辦法，使用vcpkg安裝protobuff，大概流程如下~</p>
+<p>先在專案目錄下建立vcpkg.json，內容如下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;rouletteserver&quot;</span>,</span><br><span class="line">  <span class="string">&quot;version-string&quot;</span>: <span class="string">&quot;1.0.0&quot;</span>,</span><br><span class="line">  <span class="string">&quot;builtin-baseline&quot;</span>: <span class="string">&quot;f993fc42532591aeb07328bbe0add868b0629d0f&quot;</span>,</span><br><span class="line">  <span class="string">&quot;dependencies&quot;</span>: [</span><br><span class="line">	<span class="string">&quot;protobuf&quot;</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然後執行vs2022的 工具&#x3D;&gt;命令列&#x3D;&gt;開發人員命令提示字元~</p>
+<p>開啟一個黑色小視窗，然後輸入vcpkg install~~~</p>
+<h1 id="可有能會被停醒要開啟manifest"><a href="#可有能會被停醒要開啟manifest" class="headerlink" title="可有能會被停醒要開啟manifest!!!"></a>可有能會被停醒要開啟manifest!!!</h1><p>在專案右鍵&#x3D;&gt;屬性&#x3D;&gt;vcpke中，調整成是，我印象中一開始是沒有vcpkg頁面的，大概是執行vcpkge install後出現的!?</p>
+<h1 id="然後Build成功了-大歡喜XDDDDDDDDDDDD"><a href="#然後Build成功了-大歡喜XDDDDDDDDDDDD" class="headerlink" title="然後Build成功了!!!!!!!!!!!!!大歡喜XDDDDDDDDDDDD"></a>然後Build成功了!!!!!!!!!!!!!大歡喜XDDDDDDDDDDDD</h1><p>我的第一個message如下，在login.proto中</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">syntax = <span class="string">&quot;proto3&quot;</span>;</span><br><span class="line"></span><br><span class="line">package loginpackage;</span><br><span class="line"></span><br><span class="line">message LoginRequest &#123;</span><br><span class="line">  <span class="built_in">string</span> username = <span class="number">1</span>;</span><br><span class="line">  <span class="built_in">string</span> password = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">message LoginResponse &#123;</span><br><span class="line">  <span class="built_in">string</span> username = <span class="number">1</span>;</span><br><span class="line">  <span class="built_in">string</span> password = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用結果是執行下面程式碼後…</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">loginpackage::LoginResponse res;</span><br><span class="line"></span><br><span class="line">res.set_username(<span class="string">&quot;test&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;user=&quot;</span> &lt;&lt; res.username() &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+
+<p>會印出</p>
+<p>user&#x3D;</p>
+<h1 id="是空值，沒有資料，我研究呢很久找不到問題0-0…明明設定了…"><a href="#是空值，沒有資料，我研究呢很久找不到問題0-0…明明設定了…" class="headerlink" title="是空值，沒有資料，我研究呢很久找不到問題0.0…明明設定了…"></a>是空值，沒有資料，我研究呢很久找不到問題0.0…明明設定了…</h1><p>然後跑去protobuff git直接抓最新版，安裝CMake，Build了一個版本出來試試看~</p>
+<p>但是執行上面空值程式碼還是空值!!!!</p>
+<p>最後我發現是我亂複製dll到x64\Debug下面~</p>
+<p>大概是因為一開始缺東缺西不知從哪邊複製的…</p>
+<h1 id="導致debug版本用錯dll，然後就string穩定空值，只有int等有效果"><a href="#導致debug版本用錯dll，然後就string穩定空值，只有int等有效果" class="headerlink" title="導致debug版本用錯dll，然後就string穩定空值，只有int等有效果~"></a>導致debug版本用錯dll，然後就string穩定空值，只有int等有效果~</h1><p>所以最後可行流程是!!</p>
+<ol>
+<li>建立vcpkg.json並用上面說的內容然後vcpkg install，builtin-baseline要去vcpkg git上面查~</li>
+<li>不要自行新增其他include目錄和其他程式庫目錄，全部都交給vcpkg</li>
+<li>不要亂複製dll檔案到執行目錄(x64\Debug)，正常會自己產生</li>
+<li>debug版本要用debug版本dll，abseil_dll.dll，libprotobufd.dll，libprotobuf-lited.dll~</li>
+<li>release版本要用debug版本dll，abseil_dll.dll，libprotobuf.dll，libprotobuf-lite.dll~</li>
+</ol>
+<p>然後就可以執行了!!</p>
+<p>字串也不會很神奇的空值!!</p>
+<h1 id="順便提一下，vcpkg安裝的版本會比github上面的版本稍舊，大概是穩定版關係"><a href="#順便提一下，vcpkg安裝的版本會比github上面的版本稍舊，大概是穩定版關係" class="headerlink" title="順便提一下，vcpkg安裝的版本會比github上面的版本稍舊，大概是穩定版關係"></a>順便提一下，vcpkg安裝的版本會比github上面的版本稍舊，大概是穩定版關係</h1><p>這邊沒紀錄用CMake開vs2022專案，個人覺得直接用vcpkg比較快用方便就不說了~</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2025/08/09/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLAMEc">
+      <meta itemprop="description" content="一覽無遺">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FLAMEc隨手記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/08/09/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2025-08-09 23:33:34" itemprop="dateCreated datePublished" datetime="2025-08-09T23:33:34+08:00">2025-08-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2025-06-19 22:17:49" itemprop="dateModified" datetime="2025-06-19T22:17:49+08:00">2025-06-19</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2025/08/06/fourhour/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -383,177 +559,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2025/06/05/unity6-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="FLAMEc">
-      <meta itemprop="description" content="一覽無遺">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FLAMEc隨手記">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/06/05/unity6-2/" class="post-title-link" itemprop="url">unity6.2...</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2025-06-05 23:51:34" itemprop="dateCreated datePublished" datetime="2025-06-05T23:51:34+08:00">2025-06-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2025-06-19 22:17:49" itemprop="dateModified" datetime="2025-06-19T22:17:49+08:00">2025-06-19</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="最近看到unity-6-2測試版的一些影片"><a href="#最近看到unity-6-2測試版的一些影片" class="headerlink" title="最近看到unity 6.2測試版的一些影片"></a>最近看到unity 6.2測試版的一些影片</h3><p>真的是太誇張了!!!!!!</p>
-<p>雖然可能3D模型還沒有很完善…</p>
-<p>但是一個不太需要動畫的正常2D遊戲卻是可以很正常的完成了~~~</p>
-<p>Unity 6.2推的Unity AI~</p>
-<p>可以在unity編輯器狀態下直接產生圖片和聲音…</p>
-<p>這在我看來是很麻煩的問題，卻迎刃而解!?</p>
-<p>做一個簡單的遊戲下，任何2D圖片和UI都可以靠AI完成~</p>
-<p>那麼剩下的可能是戰鬥的設計和玩法上的創新~!?</p>
-<p>雖然我的說法還是有誇張成分!!</p>
-<p>但是這真的很誇張!!</p>
-<p>比如我問gimini產生一張圖~</p>
-<p>我還要去找photopea或其他編輯圖的軟體去背!!</p>
-<p>這個Unity AI幫我們做了…我們可以直接用?</p>
-<p>所以可以快速開發基本面版等等的~~~</p>
-<p>那剩下的就是比較華麗的戰鬥部分!!</p>
-<p>開發者可以有更多的時間和金錢來製作可能很重要的戰鬥部分!!!</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://flameok1.github.io/2025/04/28/aiabout/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="FLAMEc">
-      <meta itemprop="description" content="一覽無遺">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FLAMEc隨手記">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/04/28/aiabout/" class="post-title-link" itemprop="url">聊聊AI聊聊現在</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2025-04-28 00:09:06" itemprop="dateCreated datePublished" datetime="2025-04-28T00:09:06+08:00">2025-04-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2025-06-19 22:17:49" itemprop="dateModified" datetime="2025-06-19T22:17:49+08:00">2025-06-19</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>這篇是我要睡覺前剛好看到手機上又有AI消息有感而發…</p>
-<p>怎麼說呢…手機上總看到AI很強我們完蛋了的感覺???</p>
-<p>總說著誰誰誰要被取代???</p>
-<h2 id="其實我一看到就在想，真的是這樣嗎"><a href="#其實我一看到就在想，真的是這樣嗎" class="headerlink" title="其實我一看到就在想，真的是這樣嗎?"></a>其實我一看到就在想，真的是這樣嗎?</h2><p>先來說說我，我會用AI工具嗎???</p>
-<h3 id="大概是會的"><a href="#大概是會的" class="headerlink" title="大概是會的~?"></a><font color="#FF0000">大概是會的~?</font></h3><p>不肯定是我沒課金啊!!!，所以不清楚課金以後會多猛~?</p>
-<p>但是就我碰過狀況…真的猛嗎???</p>
-<p>實例：</p>
-<p>公司皆外包後又把東西外包給其他人，這是很常見的，因為工作通常都會先落到有關係的公司上!!!</p>
-<p>然後有關係的公司發現做不完需要外包?(或單純不想做但是老闆接了…)</p>
-<p><font color="#FF0000">就外包了…然後外包忽然不做了???…</font></p>
-<p>這個很常見，比如租金，就像房東忽然漲價，不給漲就不要租這樣，常見的，沒意外~~~</p>
-<p>那怎麼辦??沒有原始碼，甚至連東西長怎樣都不知道…</p>
-<p>AI能有幫助???</p>
-<p>我碰到的剛好是網頁…對，AI是能複製網頁外觀!!!</p>
-<p>很可惜…沒登入完全看不到東西，AI只能複製登入畫面，因為AI不會登入…而且還不完全…</p>
-<h3 id="課金後…說不定會登入後複製網頁外觀"><a href="#課金後…說不定會登入後複製網頁外觀" class="headerlink" title="課金後…說不定會登入後複製網頁外觀?"></a>課金後…說不定會登入後複製網頁外觀?</h3><p>還有…新需求給的API和示意圖完全沒關係???  AI來解???????????????</p>
-<p><font color="#FF0000">對方都後知後覺給錯了解啥??????????????</font></p>
-<h1 id="當然AI還是很強的"><a href="#當然AI還是很強的" class="headerlink" title="當然AI還是很強的!!!"></a>當然AI還是很強的!!!</h1><p>比如可以產生基本網頁框架~~~</p>
-<p>當要做一個網頁，想快速做一個可以用來說明的網頁的時候~</p>
-<p>真的快!!!!!!!!</p>
-<p>但是人往往看到1就會想到2…</p>
-<p>你只想做一個參考用的對方卻想看更多???</p>
-<h3 id="比如說資料都是先寫死的，對方要看資料庫"><a href="#比如說資料都是先寫死的，對方要看資料庫" class="headerlink" title="比如說資料都是先寫死的，對方要看資料庫????????"></a>比如說資料都是先寫死的，對方要看資料庫????????</h3><p>不就連哪個資料庫都沒決定嗎&#x3D; &#x3D;?</p>
-<p>嘆了口氣~~~</p>
-<h1 id="AI應該會越來越誇張是正確的"><a href="#AI應該會越來越誇張是正確的" class="headerlink" title="AI應該會越來越誇張是正確的!!"></a>AI應該會越來越誇張是正確的!!</h1><p>就程式碼上!~</p>
-<p>越準確就越誇張!!!</p>
-<p>但是大家不要忽略一點…提問的人可能很會寫程式…</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -623,7 +628,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
